@@ -1,2 +1,2 @@
 # Falling-Sand
-A falling sand simulation
+A falling sand simulation made in Java.
