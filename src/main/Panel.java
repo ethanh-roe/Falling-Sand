@@ -34,9 +34,9 @@ public class Panel extends JPanel {
 
 	public StopWatch timer;
 
-	public Panel(JFrame frame) {
-		this.frame = frame;
-		
+	public Panel(JFrame f) {
+		this.frame = f;
+
 		sandColor = new Color(66, 135, 235);
 		colorGrid = new Color[SCREEN_HEIGHT / 10][SCREEN_WIDTH / 10];
 
@@ -52,7 +52,7 @@ public class Panel extends JPanel {
 		frame.addKeyListener(new MyKeyListener());
 
 		frame.setFocusable(true);
-		
+
 		initGrid();
 	}
 
@@ -263,7 +263,6 @@ public class Panel extends JPanel {
 	}
 
 	private class StopWatch {
-		int count = 0;
 		ActionListener taskPerformer = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				changeColor();
@@ -288,10 +287,8 @@ public class Panel extends JPanel {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			System.out.println("pressed");
 			if (e.getKeyCode() == KeyEvent.VK_R) {
 				clearGrid();
-				System.out.println("R");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_EQUALS && FILL_SIZE < 5) {
 				FILL_SIZE++;
